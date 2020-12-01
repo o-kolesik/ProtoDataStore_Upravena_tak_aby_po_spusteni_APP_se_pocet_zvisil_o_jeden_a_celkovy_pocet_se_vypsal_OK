@@ -30,7 +30,7 @@ import com.codelab.android.datastore.databinding.ActivityTasksBinding
 
 class TasksActivity : AppCompatActivity() {
 
-    var valueCounter: TextView? = null
+  //  var valueCounter: TextView? = null
 
     private lateinit var binding: ActivityTasksBinding
     private val adapter = TasksAdapter()
@@ -43,7 +43,7 @@ class TasksActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        valueCounter = findViewById(R.id.valueCounter);
+      //  valueCounter = findViewById(R.id.valueCounter);
 
         viewModel = ViewModelProvider(
             this,
@@ -62,26 +62,31 @@ class TasksActivity : AppCompatActivity() {
 
 
 
+
+
         //získání předchozí hodnoty
-        var currentAppStart = getDataInt("appStarts", 0)
-        //počet ++
-        currentAppStart++
-        saveDataInt("appStarts", currentAppStart)
-        //zobrazení
-        valueCounter?.setText("počet:" + currentAppStart)
+     //   var currentAppStart = getDataInt("appStarts", 0)
+     //   //počet ++
+     //   currentAppStart++
+     //   saveDataInt("appStarts", currentAppStart)
+     //   //zobrazení
+     //   valueCounter?.setText("počet:" + currentAppStart)
 
     }
-    private fun saveDataInt(key: String, data: Int) {
-        val preferences = getSharedPreferences("PREFS", 0)
-        val editor = preferences.edit()
-        editor.putInt(key, data)
-        editor.apply()
-    }
 
-    private fun getDataInt(key: String, dafValue: Int): Int {
-        val preferences = getSharedPreferences("PREFS", 0)
-        return preferences.getInt(key, dafValue)
-    }
+
+   // private fun saveDataInt(key: String, data: Int) {
+   //     val preferences = getSharedPreferences("PREFS", 0)
+   //     val editor = preferences.edit()
+   //     editor.putInt(key, data)
+    //    editor.apply()
+   // }
+
+
+   // private fun getDataInt(key: String, dafValue: Int): Int {
+      //  val preferences = getSharedPreferences("PREFS", 0)
+       // return preferences.getInt(key, dafValue)
+   // }
 
 
 
